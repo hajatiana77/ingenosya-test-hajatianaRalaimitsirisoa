@@ -1,0 +1,31 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block content %}
+    <h1>{{'Shop space'|trans}}</h1>
+    <table class="table">
+        <thead>
+            <tr></tr>                
+                <th>{{'Name'|trans}}</th>                                 
+                <td>{{'Action'|trans}}</td>                             
+            </tr>
+        </thead>
+        <tbody>                               
+            {% for key, pv in rows %}
+                {% if pv['user'] is not null %}                                  
+                    <tr>                                                                         
+                        <td>{{ pv['nom_pv'] }}</td>                        
+                        {% if idUser in tab[pv['id']] %}
+                        <td>
+                            <a href="{{ path('adminpv_show', {'id': pv['id']}) }}">{{'Show'|trans}}</a> 
+                        </td>
+                        {% endif %}
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">{{'No records found'|trans}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}        
+        </tbody>
+    </table>    
+{% endblock %}

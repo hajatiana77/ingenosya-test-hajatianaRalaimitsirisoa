@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>            
+            <trans-unit id="1">
+                <source>.</source>
+                <target>.</target>
+            </trans-unit> 
+            <trans-unit id="2">
+                <source>Username</source>
+                <target>Nom d'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Password</source>
+                <target>Mot de passe</target>
+            </trans-unit>  
+            <trans-unit id="4">
+                <source>Agree terms</source>
+                <target>Accepter les conditions ?</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Register</source>
+                <target>S'inscrire</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Save</source>
+                <target>Enregistrer</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Connect</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Please sign in</source>
+                <target>Se connecter ici</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Home page</source>
+                <target>Gestion de supermarche</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Administrator space</source>
+                <target>Espace administrateur</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Update form</source>
+                <target>Formulaire de modification</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Enable</source>
+                <target>Actif</target>
+            </trans-unit> 
+            <trans-unit id="14">
+                <source>Log in</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Shop space</source>
+                <target>Espace de vente</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Employee</source>
+                <target>Employ&#233;e</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Show</source>
+                <target>Voir</target>
+            </trans-unit> 
+            <trans-unit id="18">
+                <source>Action</source>
+                <target>Action</target>
+            </trans-unit> 
+            <trans-unit id="19">
+                <source>Name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>No records found</source>
+                <target>Aucun enregistrement trouv&#233;</target>
+            </trans-unit> 
+            <trans-unit id="21">
+                <source>Sign in</source>
+                <target>S'identifier</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>Product list</source>
+                <target>liste de produits</target>
+            </trans-unit> 
+            <trans-unit id="23">
+                <source>Deconnect</source>
+                <target>Se d&#233;connecter</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>Validate</source>
+                <target>Valider</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>Quantified</source>
+                <target>Quantint&#233;</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>List of commands</source>
+                <target>Liste des commandes</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>Charge</source>
+                <target>Facturer</target>
+            </trans-unit> 
+            <trans-unit id="28">
+                <source>Cancel</source>
+                <target>Annuler</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>Designation</source>
+                <target>D&#233;signation</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>Price</source>
+                <target>Prix</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>Product</source>
+                <target>Produit</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>Shop Point</source>
+                <target>Point de vente</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>Create new</source>
+                <target>Nouveau</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>show</source>
+                <target>montrer</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>edit</source>
+                <target>modifier</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>back to list</source>
+                <target>retour liste</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>Create new Pointdevente</source>
+                <target>Cr&#233;er nouveau point de vente</target>
+            </trans-unit>
+            <trans-unit id="40">
+                <source>Delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>Update</source>
+                <target>Modifier</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>Create new Produit</source>
+                <target>Cr&#233;er nouveau Produit</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>Users</source>
+                <target>Utilisateurs</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>Graph</source>
+                <target>Graphes</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>Shop choice</source>
+                <target>Choisir un point de vente </target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>Daily recipe</source>
+                <target>Recette journali&#232;re</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

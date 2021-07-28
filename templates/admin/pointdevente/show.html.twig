@@ -1,0 +1,24 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block content %}
+<div class="container-fluid">        
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ pointdevente.id }}</td>
+                </tr>
+                <tr>
+                    <th>Nom_pv</th>
+                    <td>{{ pointdevente.nomPv }}</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <a href="{{ path('adminpointdevente') }}">{{'back to list'|trans}}</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{ path('adminpointdevente_edit', {'id': pointdevente.id}) }}">{{'edit'|trans}}</a>
+    
+        {{ include('admin/pointdevente/_delete_form.html.twig') }}
+</div>
+{% endblock %}

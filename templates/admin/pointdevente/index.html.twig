@@ -1,0 +1,33 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block content %} 
+   <div class="container-fluid"> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom_pv</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for pointdevente in pointdeventes %}
+                <tr>
+                    <td>{{ pointdevente.id }}</td>
+                    <td>{{ pointdevente.nomPv }}</td>
+                    <td>
+                        <a href="{{ path('adminpointdevente_show', {'id': pointdevente.id}) }}">{{'show'|trans}}</a>
+                        <a href="{{ path('adminpointdevente_edit', {'id': pointdevente.id}) }}">{{'edit'|trans}}</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">{{'no records found'|trans}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    
+        <a href="{{ path('adminnew_pv') }}">{{'Create new'|trans}}</a>
+    </div>
+{% endblock %}

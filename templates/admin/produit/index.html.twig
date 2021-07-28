@@ -1,0 +1,35 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block content %}    
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom_pdt</th>
+                    <th>Prix_unitaire</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.id }}</td>
+                    <td>{{ produit.nomPdt }}</td>
+                    <td>{{ produit.prixUnitaire }}</td>
+                    <td>
+                        <a href="{{ path('adminproduit_show', {'id': produit.id}) }}">{{'show'|trans}}</a>
+                        <a href="{{ path('adminproduit_edit', {'id': produit.id}) }}">{{'edit'|trans}}</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">{{'no records found'|trans}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    
+        <a href="{{ path('adminproduit_new') }}">{{'Create new'|trans}}</a>
+    </div>
+{% endblock %}

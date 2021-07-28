@@ -1,0 +1,107 @@
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">        
+<!-- Fav and touch icons -->
+<!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png'">-->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('images/ico/apple-touch-icon-72-precomposed.png') }}">
+<link rel="apple-touch-icon-precomposed" href="{{ asset('images/ico/apple-touch-icon-57-precomposed.png') }}}">
+<link rel="shortcut icon" href="{{ asset('images/img/logo.png')}}">
+
+<!-- CSS -->
+<!-- Bootstrap & FontAwesome & Entypo CSS -->
+<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="{{ asset('css/font-awesome-ie7.min.css') }}"><![endif]-->
+<link href="{{ asset('css/font-entypo.css') }} " rel="stylesheet" type="text/css">
+<link href="{{ asset('css/ck_loading/css/modal-loading-animate.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/ck_loading/css/modal-loading.css') }}" rel="stylesheet" type="text/css">
+
+<!-- Fonts CSS -->
+<link href="{{ asset('css/fonts.css') }}" rel="stylesheet" type="text/css">
+
+<!-- Plugin CSS -->
+<link href="{{ asset('css/plugins/jquery-ui/jquery-ui.custom.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/prettyPhoto.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/isotope.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/pnotify/jquery.pnotify.css') }}" media="screen" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/google-code-prettify/prettify.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/tagsInput/jquery.tagsinput.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/bootstrap-switch/bootstrap-switch.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/colorpicker/colorpicker.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/plugins/layerslider/layerslider.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css">
+
+<!-- Specific CSS -->
+<!-- Theme CSS -->
+<link href="{{ asset('css/theme.css') }}" rel="stylesheet" type="text/css">
+
+<!--[if IE]> <link href="css/ie.css" rel="stylesheet"> <![endif]-->
+<link href="{{ asset('css/chrome.css') }}" rel="stylesheet" type="text/chrome">
+<link href="{{ asset('css/bootstrap-multiselect.css') }}" rel="stylesheet" type="text/chrome">
+<!-- chrome only css -->
+
+<!-- Responsive CSS -->
+<link href="{{ asset('css/theme-responsive.min.css') }}" rel="stylesheet" type="text/css">
+<!--<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">-->
+<link href="{{ asset('css/bootstrap-toggle.min.css') }}" rel="stylesheet">			
+<link href="{{ asset('css/icon_material.css') }}" rel="stylesheet">	
+<link href="{{ asset('css/sweetalert2.all.min.css') }}" rel="stylesheet" type="text/css">
+
+<!-- RECEPTION-->		
+<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+<!--<script type="text/javascript" src="js/bootbox.min.js"></script>-->
+<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/sweetalert2.all.min.js') }}"></script>	
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+<script type="text/javascript" src="{{ asset('js/bootstrap-table.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins/bootstrap-typeahead/bootstrap3-typeahead.min.js') }}"> </script>
+<script type="text/javascript" src="{{ asset('js/plugins/bootbox/bootbox.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap-select.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap-timepicker.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/dataTables.bootstrap.js') }}"></script>
+
+<!-- for specific page in style css -->
+<!-- Head SCRIPTS -->
+<script type="text/javascript" src="{{ asset('js/modernizr.js') }}"></script>
+<script type="text/javascript" src=" {{ asset('js/mobile-detect.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/mobile-detect-modernizr.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/igy.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap-multiselect.min.js') }}"></script>
+<div base_url="" id="base_url" hidden></div>
+<script src="{{ asset('js/personal_js/utility.js') }}"></script>	
+<script type="text/javascript" src="{{ asset('js/ck_loading/modal-loading.js') }}"></script>
+<script type="text/javascript">
+	function loading_1() {
+		// LOADING ...
+		let loading = new Loading()
+		$(window).load(function() {
+			loading.out()
+			loading._timer = null
+		})
+		// LOADING ...
+		$('.modal-loading').append('<br/><img src="{{ asset('images/jo_load.gif') }}" />')
+	}
+
+	function loading() {
+		// LOADING ...
+		let loading = new Loading()
+		$(document).ajaxStop(function() {
+			loading.out()
+			loading._timer = null
+		})
+		// LOADING ...
+		$('.modal-loading').append('<br/><img src="{{ asset('images/jo_load.gif') }}" />')
+	}
+</script>
+<script>
+	loading_1()
+</script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="{{ asset('js/html5shiv.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/respond.min.js') }}"></script>
+<![endif]-->

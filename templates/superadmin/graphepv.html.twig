@@ -1,0 +1,52 @@
+{% extends 'superadmin/base_superadmin.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">                   
+        <form id="form1" action="{{ path('superadminshowgraphpv')}}" method="POST">   
+            <input type="hidden" id="id_pv" name="id_pv" value="" />                                 
+             <table class="table">                
+                <tbody>
+                    <tr>
+                        <td>Date1:</td> <td><input type="text" id="datepicker1" name="datepicker1" value=""></td>
+                        <td>Date2:</td> <td><input type="text" id="datepicker2" name="datepicker2" value=""></td>
+                    </tr>
+                </tbody>
+             </table>                                                
+            
+            <table class="table">
+                <thead>
+                    <tr></tr>                
+                        <th>{{'Name'|trans}}</th>                                                              
+                    </tr>
+                </thead>
+                <tbody>                               
+                    {% for key, pv in rows %}
+                        {% if pv['user'] is not null %}                                  
+                            <tr>                                                                         
+                                <td>{{ pv['nom_pv'] }}</td>                                                                        
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">{{'No records found'|trans}}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}        
+                </tbody>
+            </table>
+            <div class="justify-content-center">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-primary">{{ 'Show'|trans}}</button>
+            </div>            
+         </form>  
+   </div>  
+    <script>
+      $( function() {
+        $( "#datepicker1" ).datepicker();
+        $( "#datepicker2" ).datepicker();
+      } );
+              
+    </script>
+{% endblock %}

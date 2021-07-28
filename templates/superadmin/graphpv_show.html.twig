@@ -1,0 +1,13 @@
+{% extends 'superadmin/base_superadmin.html.twig' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h1>{{'Daily recipe'|trans}} : {{ rectteJournaliere }}(Ar)</h1>         
+        <h1>{{'Graph'|trans}}</h1>    
+        <div>
+            <img src="data:image/png;base64, {{ ImageProduitsPlusAchete }}" />
+        </div>          
+        <p>{# idPv #}</p> 
+    </div>  
+    
+{% endblock %}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>An Error Occurred: {{ status_text }}</title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-4.4.1-dist/bootstrap.min.css') }}">
+    <style type="text/css" media="screen">
+        html, body{
+            min-height: 100%;
+        }
+        .banner {
+            background: rgb(178,235,255);
+            background: linear-gradient(180deg, rgba(178,235,255,1) 0%, rgba(255,255,255,1) 50%);
+            padding-top: 120px;
+            min-height: 100%;
+        }
+        .banner .container {
+            /*background: url(images/bannerUnderconstruct.png) no-repeat;*/
+            width: 100%;
+            /*padding-top: 265px;*/
+            background-size: 100%;
+            min-height: 100vh;
+        }
+        .maintenance{
+            display:none;
+        }
+        .message {
+            font-size: 35px;
+            font-weight: 500;
+            height: auto;
+            color: #F9B827;
+            border-radius: 5%;
+            margin-top: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            padding-right:20px;
+            text-align: center;
+            text-shadow: 1px 1px 2px #fff;
+        }
+        .logo{
+            width: auto;
+        }
+        .logo img{
+        }
+        .wrap-message{
+            width: auto;
+        }
+        .bleu{
+            color: #3B4D66;/*#2393B9;*/
+        }
+        .msgform{
+            width: 250px;
+            height: 250px;
+            right: 10px;
+            background: #F9B827;
+            padding: 20px !important;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid banner d-flex justify-content-center align-items-center">        
+        <div class="container">
+            <div class="logo d-flex justify-content-center align-items-center">
+                An Error Occurred 500: {{ status_text }}
+            </div>
+            <div class="wrap-message d-flex justify-content-center align-items-center">
+                <div class="message" width="300">
+                    <strong>Patience</strong>,<br> nous améliorons la plate-forme  qui va révolutionner <br>
+                    le site web
+                </div>
+            </div>
+    
+            <div class="bleu d-flex justify-content-center align-items-center">
+                des questions? des remarques? c'est par ici &nbsp;  <a href="hajatianaralaimitsirisoa@yahoo.com" title="">hajatianaralaimitsirisoa@yahoo.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+{% extends 'admin/base_admin.html.twig' %}
+
+{% block content %}
+    <style>	
+    	.update_user,.delete_user{
+    		cursor: pointer;
+    	}
+    </style>
+    <div class="vd_head-section clearfix" style="background-color: #fff">
+        <div class="vd_panel-header">
+            <ul class="breadcrumb">
+                <li><a href="">{{ nom_pv }}</a></li>
+                <li class="active">{{ 'Product list'|trans }}</li>
+            </ul>
+        </div>
+    </div>
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+        {{ message }}
+        </div>
+    {% endfor %}
+    <div class="vd_title-section clearfix">
+        <div class="vd_panel-header">
+            <div class="toolbar_container">
+                <div class="col-md-12">
+                    <div class="row toolbar">					
+                        <div class="tools_left" style="float: left;">
+                        	<div class="tools">
+                        		<div class="elements">
+                                    <div class="btn btn-danger btn-perso" id="add_user">creer</div>
+                                    <div class="btn btn-default btn-sm" data-content="impression" data-toggle="popover" id="btn_impression"><i class="glyphicon glyphicon-print"></i></div>
+                                    <div class="btn btn-default btn-sm" data-content="exporter" data-toggle="popover" id="btn_exporter"><i class="glyphicon glyphicon-export"></i></div>
+            						<div class="btn btn-default btn-sm" title="" data-original-title="" data-toggle="popover" data-content="Rechercher" id="btn_search"><i class="glyphicon glyphicon-search"></i></div>
+                                    <div class="btn btn-default btn-sm" data-content="annuler" data-toggle="popover" id="btn_cancel"><i class="glyphicon glyphicon-remove"></i></div>
+                                </div>
+                        	</div>
+                        </div>
+                        <div class="tools_right" style="float: right;">
+                            <span style="margin: 5px;">
+                    		  <div class="tools" style="float: left; margin: 5px;" id="custom_pagination_info"></div>
+                            </span>
+                    		<div class="tools prev_and_next" style="float: left;">
+                    			<div class="btn-group" style="float: left;">
+                    				<div class="btn btn-default table_previous">
+                    					<i class="glyphicon glyphicon-arrow-left"></i>
+                    				</div>
+                    				<div class="btn btn-default table_next">
+                    					<i class="glyphicon glyphicon-arrow-right"></i>
+                    				</div>
+                    			</div>
+                    		</div>
+                    		<div class="tools list_and_form" style="float: right;">
+                    			<div class="btn-group" style="float: right;">
+                    				<div data-toggle="popover" data-content="Vue&nbsp;liste" class="btn btn-default list_view">
+                    					<i class="glyphicon glyphicon-th"></i>
+                    				</div>
+                    				<div data-toggle="popover" data-content="Vue&nbsp;formulaire" class="btn btn-default form_view">
+                    					<i class="glyphicon glyphicon-calendar"></i>
+                    				</div>
+                    			</div>
+                    		</div>
+                        </div>
+                    </div>
+    				<!-- Outils de recherche -->
+                    <div class="row">
+                        <div class="col-md-7">
+                        	<div class="row">
+                        		<div class="form-group-perso">
+                                    <label class="control-label col-sm-4 left">{{'Name'|trans}}</label>
+                                    <div class="col-sm-8">
+                                    	<input type="text" class="form-control form-control-perso typehead tt-query" id="nom_poduit" name="nom_poduit" autocomplete='off'>
+                                    </div>
+                        		</div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <input type="hidden" name="id_pv" id="id_pv" value="{{id_pv}}"/>
+    
+    <div class="vd_content-section clearfix" style="background-color: #fff;overflow-y:scroll;">
+        <div class="row list_container">
+            <div class="col-md-12">
+                <div class="panel-body table-responsive">                    
+                  <table 
+                        data-url="{{ path('adminadmin_getlistproduit') }}"
+                        data-toggle="table" 
+                        data-click-to-select="true" id="list_produits" 
+                        data-pagination="true" 
+                        data-page-number="1"
+                        data-search="false" 
+                        data-show-refresh="false" 
+                        data-show-toggle="false" 
+                        data-show-columns="false" class="table table-stripped" 
+                        data-side-pagination="server" 
+                        data-sort-ordre = "ASC"                    
+                        data-page-size="10">
+                    <thead>
+                        <tr>
+                            <th data-field="nom_pdt" data-sortable="true">{{'Name'|trans}}</th>					
+                            <th data-field="prix_unitaire" data-sortable="true">PU (ar)</th>                                                        					
+                            <th data-field="action" data-formatter="action_formatter" data-events="action_produit">{{'Quantified'|trans}}</th>                            
+                        </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-primary" id="btn_valider">{{'Validate'|trans}}</button>
+                </div>                
+            </div>
+        </div>  
+    </div>
+    
+    <div id="modal_commande" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width:80%;margin-top:100px;background-color: blue;">
+        	<div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-center">{{ 'List of commands'|trans }}</h3>
+                </div>
+        		<div class="modal-body">
+                    <table border="1" width="100%">
+                        <thead>
+                            <tr>
+                                <th>{{'Designation'|trans}}</th><th>PU</th><th>{{'Quantified'|trans}}</th><th>{{'Price'|trans}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>                    									
+        		</div>
+        		<div class="modal-footer">
+        			<button data-dismiss="modal" class="btn btn-danger" id="btn_facturer">{{'Charge'|trans}}</button>
+        			<button data-dismiss="modal" class="btn btn-danger" aria-hidden="true">{{'Cancel'|trans}}</button>
+        		</div>
+        	</div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">  
+        var tab_id_quantite=[[]];        
+        var tab_id_nom = [[]]; 
+        var tab_id_pu = [[]];         
+    	function init_table(){
+            $('#list_produits').bootstrapTable({             
+        		queryParams : function (params) {
+        	    	var q = {
+        	                "limit": 10,
+        	                "offset": params.pageSize * (params.pageNumber - 1),
+        	                "search": params.searchText,
+                            "name": params.sortName,
+                            "order": params.sortOrder,
+                            "id_pv": $('#id_pv').val(),
+                            "nom_poduit": $('#nom_poduit').val()                            
+        	            };
+                    $('.pagination').hide();
+                    $('.pagination-info').hide();
+                    $('#limit').val(params.pageSize);
+                    return q;
+                },
+                onLoadSuccess : function (data) {
+           	        $('.pagination').hide();
+        	    	$('.pagination-info').hide();
+        	    	$('#custom_pagination_info').html($('.pagination-info').html());
+                    var chn_offset=$('.pagination-info').html();
+                    var tab_offset=chn_offset.split('-');
+                    if(tab_offset[0]>0){
+            		  $('#offset').val(tab_offset[0]);
+                    }
+        	    	total_rows = data.total;
+                    if(data.rows.length>0){
+                        for(let ligne of data.rows){                                                          
+                            tab_id_nom.push([ligne.id,ligne.nom_pdt]);  
+                            tab_id_pu.push([ligne.id,ligne.prix_unitaire]);                                                                                 
+                        }
+                    }
+           	    },
+                onClickRow : function(row){                  
+                    //document.location.href ="/admin/editProduit/"+row.id;
+                },
+                onLoadError: function (status) {
+                    //return false;
+                    alert(status);
+                 }	   
+        	});
+        }
+        
+        init_table(); 
+        
+        $('#btn_search').on('click', function(e){            
+    		$('#list_produits').bootstrapTable('destroy');
+    		init_table();
+    		$('#list_produits').bootstrapTable('refresh', {silent: false});
+	    });
+        
+        $('#nom_poduit').keypress(function(e){
+            if(e.which == 13){
+                $('#list_produits').bootstrapTable('destroy');
+                init_table();
+                $('#list_produits').bootstrapTable('refresh', {silent: false});          
+            }                       
+        });
+        
+        $('#btn_cancel').on('click',function(){            
+    		$('#nom_poduit').val('');    		
+    		$('#list_produits').bootstrapTable('destroy');
+    		init_table();
+    		$('#list_produits').bootstrapTable('refresh', {silent: false});
+    	});
+        
+        $('.table_previous').on('click', function(){	   
+            $('.pagination > .page-pre').trigger('click');
+        });
+    
+    	$('.table_next').on('click', function(){
+    	   $('.pagination > .page-next').trigger('click');                
+        }); 
+        
+        function action_formatter(value,row){
+            return '<div class="col-md-4"><input type="text" class="quantite_produit" id="'+row.id+'"></div>';
+        } 
+         
+        window.action_produit = {            
+            'focusout .quantite_produit' : function (e, value, row, index){
+            	e.stopPropagation();
+                if($(this).val()){
+                  tab_id_quantite.push([this.id,$(this).val()]);  
+                }                                
+            } ,
+	   }       
+              
+       $('#btn_valider').on('click',function(){
+            var total_prix=0;
+            if(tab_id_quantite.length>0){
+                for (var i = 0; i < tab_id_quantite.length; i++)
+                {    
+                    if(tab_id_quantite[i][1]){
+                        if(tab_id_nom.length>0){
+                            for (var j = 0; j < tab_id_nom.length; j++)
+                            {                                
+                                if(tab_id_nom[j][0]==tab_id_quantite[i][0]){
+                                    for(var k=0;k<tab_id_pu.length;k++){
+                                        if(tab_id_nom[j][0]==tab_id_pu[k][0]){
+                                            var prix=tab_id_pu[k][1]*tab_id_quantite[i][1];
+                                            total_prix+=prix;
+                                            $("#modal_commande table tbody").append('<tr><td>'+tab_id_nom[j][1]+'</td><td align="center">'+tab_id_pu[k][1]+'</td><td align="center">'+tab_id_quantite[i][1]+'</td><td align="center">'+prix+'</td></tr>');
+                                        }
+                                    }
+                                }                 
+                            }   
+                        }                        
+                    }                                                  
+                }
+                $("#modal_commande table tbody").append('<tr><td colspan="3" align="right">TOTAL</td><td align="center">'+total_prix+'</td></tr>');   
+                $('#modal_commande').modal('show');
+            }                                                  
+       });
+       
+       $('#btn_facturer').on('click',function(){            
+            $.ajax({					   
+    			type: 'POST',                    			
+                url: "{{ path('adminadmin_facture') }}",                
+    			data: {
+    			         "id_pd": $('#id_pv').val(),
+                         "tab_id_quantite":tab_id_quantite
+                     },                        
+    			success: function(data){
+                    if(data.status){
+                        tab_id_quantite=[[]]; 
+                        $("#modal_commande table tbody").empty();
+                        swal.fire('Facture bien envoyee !!!','success');                        
+                        window.open("http://localhost:8000/admin/printfacture/"+data.id_facture);                        
+                    }
+                },   			
+    			error: function(e){
+    			    swal.fire('Une erreur s\'est produite','error');				
+    			}
+            });
+       });    
+    </script>
+
+{% endblock %}

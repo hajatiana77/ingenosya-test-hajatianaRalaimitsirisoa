@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>{{'Shop space'|trans}}</title>
+	<meta name="keywords" />
+	<meta name="description">
+	<meta name="author">
+    {{ include('admin/layout/head_back.html.twig') }}
+</head>
+
+<body id="tables" class="full-layout nav-right-hide nav-right-start-hide nav-top-fixed responsive clearfix preloadPage" data-active="tables" data-smooth-scrolling="1">
+    <div class="vd_body">
+    	<div id="page-wrap">
+            {{ include('admin/layout/header_back.html.twig') }}      
+            {{ include('admin/layout/menu_back_hight.html.twig') }}
+            {% block content %}
+            {% endblock %}
+            {{ include('admin/layout/menu_back_low.html.twig') }}
+            {{ include('admin/layout/footer_back.html.twig') }}
+        </div>
+        <a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"> <i class="fa  fa-angle-up"> </i> </a>
+    </div>
+
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="{{ asset('js/excanvas.js') }}"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="{{ asset('js/plugins/jquery-ui/jquery-ui.custom.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/caroufredsel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/breakpoints/breakpoints.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/dataTables/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/prettyPhoto-plugin/js/jquery.prettyPhoto.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/tagsInput/jquery.tagsinput.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/bootstrap-switch/bootstrap-switch.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/blockUI/jquery.blockUI.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/plugins/pnotify/js/jquery.pnotify.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/theme.js') }}"></script>
+    <script>
+      $(window).load(function() {
+        $("body").removeClass("preload");
+      });
+    </script>
+</body>
+</html>
+

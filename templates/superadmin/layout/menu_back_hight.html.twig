@@ -1,0 +1,49 @@
+<div class="content">
+    <div class="container">
+        <div class="vd_navbar vd_nav-width vd_navbar-tabs-menu vd_navbar-left">
+            <div class="navbar-menu clearfix">
+                <h3 class="menu-title hide-nav-medium hide-nav-small">{{'Administrator space'|trans}}</h3>
+                <div class="vd_menu">
+                    <ul>                
+                        <li class="active">
+                            <a href="{{ path('superadminsuperadmin_index') }}">
+                                <span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                                <span class="menu-text">{{'Administrator space'|trans}}</span>
+                                <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                            </a>
+                            <div class="child-menu" data-action="click-target" style="display:block">
+                                <ul>  
+                                    <li class="active-child-menu">
+                                        <a href="{{ path('superadmingraph') }}" class="nav-link ">
+                                            <i class=""></i>
+                                            <span class="menu-text">{{'Graph'|trans}} produit</span>
+                                        </a>
+                                    </li>                          
+                                    <li class="active-child-menu">
+                                        <a href="{{ path('superadmingraphpv') }}" class="nav-link ">
+                                            <i class=""></i>
+                                            <span class="menu-text">{{'Graph'|trans}} point de vente</span>
+                                        </a>
+                                    </li>                                                                                                  
+                                </ul>
+                            </div>
+                        </li>                                                                    
+                    </ul>                
+                </div>
+            </div>
+            <div class="navbar-spacing clearfix"></div>
+            <div class="vd_menu vd_navbar-bottom-widget" id="logout_menu">
+                <ul>
+                    <li>
+                        <a href="{{ path('app_logout') }}">
+                            <span class="menu-icon"><i class="fa fa-sign-out"></i></span>
+                            <span class="menu-text">{{'Deconnect'|trans}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="vd_content-wrapper">
+            <div class="vd_container __perso_container" style="background-color: #fff">
+                <div class="vd_content clearfix">
+                    <div id="main-content">                    

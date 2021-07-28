@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-4.4.1-dist/bootstrap.min.css') }}"/>            
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}"/>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body class="container">
+        {% block head %}
+        <dir class="y"></dir>
+        <nav class="navbar navbar-dark bg-primary navbar-expand-lg navbar-light">                      
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="javascript:void(0)" onclick="alert('En cours de développement!!!')">Foire aux Questions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="javascript:void(0)" onclick="alert('En cours de développement!!!')">Le Mag</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link BleuButton Button" href="{{ path('app_register')}}">{{ 'Register'|trans }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link OrangeButton Button" href="{{ path('app_login')}}">{{ 'Connect'|trans }}</a>
+                    </li>
+                </ul>
+            </div>                   
+        </nav>        
+        {% endblock %}
+        
+        {% for message in app.flashes('notice') %}            
+            <div class="alert alert-success" role="alert">
+              {{ message }}
+            </div>
+        {% endfor %}
+        
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        {% block footer %}
+        <footer id="footer">
+            <div class="container">
+                <div class="LinkFooter">
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')">A propos</a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')">Qui sommes-nous ?</a></li>
+                    </ul>
+                </div>
+                <div class="LinkFooter">
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')">Nos valeurs</a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')">Mentions l&eacute;gales</a></li>
+                    </ul>
+                </div>
+                <div class="LinkFooter">
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')">Conditions g&eacute;n&eacute;rales</a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="SocialNetwokt">
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')"><img src="{{ asset('images/facebook.svg') }}" alt="facebook" /></a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')"><img src="{{ asset('images/linkedin.svg') }}" alt="linkedin" /></a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')"><img src="{{ asset('images/instagram.svg') }}" alt="instagram" /></a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')"><img src="{{ asset('images/twitter.svg') }}" alt="twitter" /></a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('En cours de développement!!!')"><img src="{{ asset('images/youtube.svg') }}" alt="youtube" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div id="copyright">            
+            <img src="{{ asset('images/logo-footer.svg') }}" alt="gestionsupermarche@home" />
+            <span class="copyright">© 2020 gestionsupermarche@home</span>            
+        </div>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,27 @@
+/*Footer*/
+#footer{
+	background:#2393B9;
+	padding:40px 0;
+}
+#footer .container{
+	display:flex;
+	justify-content: center;
+}
+#footer  ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#footer  ul li a{
+	color:#E4E8ED;
+}
+
+.LinkFooter{
+	margin-right:130px;
+}
+.SocialNetwokt ul{
+	display:flex;
+}
+.SocialNetwokt ul li{
+	margin-left:10px;
+}
